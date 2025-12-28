@@ -1,0 +1,287 @@
+/*
+ * Dark Academia Manuscript
+ * A scholarly theme for mathematical writing
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+:root {
+  --bg-deep: #2f2b26;
+  --bg-surface: #3a3530;
+  --text-primary: #f5f1eb;
+  --text-body: #e8e4dd;
+  --text-secondary: #c4bfb6;
+  --text-muted: #8a857d;
+  --accent: #CC785C;
+  --border: rgba(244, 241, 235, 0.1);
+  --font-serif: 'Crimson Pro', Georgia, serif;
+  --font-mono: 'SF Mono', Monaco, monospace;
+  --measure: 40rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--bg-deep);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'onum' 1;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--text-primary);
+}
+
+/* Content container with accent edge */
+.container {
+  position: relative;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  min-height: 100vh;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+/* Accent stripe on left edge */
+.container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+
+/* Header */
+header {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+/* Home page title */
+main > h1 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Post list */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-list a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.post-list a:hover {
+  color: var(--accent);
+}
+
+.post-list time {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Post header */
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-header h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.post-header time {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Post content - tight typesetting */
+.post-content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content p {
+  margin-bottom: 0.9rem;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.post-content blockquote {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 0.9rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.25rem;
+}
+
+.post-content li::marker {
+  color: var(--accent);
+}
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(255,255,255,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.post-content pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+/* Mathematics - natural flow like typeset text */
+.katex-display {
+  margin: 0.9rem 0;
+  overflow-x: auto;
+}
+
+.katex {
+  font-size: 1.05em;
+  color: var(--text-primary);
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (min-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 4rem 3rem;
+  }
+
+  .post-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 2rem 1.5rem;
+    border-left: none;
+    border-right: none;
+  }
+
+  .container::before {
+    display: none;
+  }
+
+  .post-header h1 {
+    font-size: 1.5rem;
+  }
+}
