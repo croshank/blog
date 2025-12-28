@@ -6,6 +6,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
 
 :root {
+  /* Light mode (default) */
+  --bg-deep: #F0F0EB;
+  --bg-surface: #FAFAF7;
+  --text-primary: #262625;
+  --text-body: #3a3a38;
+  --text-secondary: #5c5c58;
+  --text-muted: #8a8a85;
+  --accent: #CC785C;
+  --border: rgba(38, 38, 37, 0.12);
+
+  --font-serif: 'Crimson Pro', Georgia, serif;
+  --font-mono: 'SF Mono', Monaco, monospace;
+  --measure: 40rem;
+}
+
+[data-theme="dark"] {
   --bg-deep: #2f2b26;
   --bg-surface: #3a3530;
   --text-primary: #f5f1eb;
@@ -14,9 +30,6 @@
   --text-muted: #8a857d;
   --accent: #CC785C;
   --border: rgba(244, 241, 235, 0.1);
-  --font-serif: 'Crimson Pro', Georgia, serif;
-  --font-mono: 'SF Mono', Monaco, monospace;
-  --measure: 40rem;
 }
 
 *, *::before, *::after {
@@ -38,11 +51,12 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'kern' 1, 'liga' 1, 'onum' 1;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--text-primary);
+  color: white;
 }
 
 /* Content container with accent edge */
@@ -55,6 +69,7 @@ body {
   background: var(--bg-surface);
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 /* Accent stripe on left edge */
@@ -70,6 +85,9 @@ body {
 
 /* Header */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
@@ -87,6 +105,33 @@ header {
 
 .site-title:hover {
   color: var(--accent);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 /* Home page title */
@@ -209,7 +254,7 @@ main > h1 {
 .post-content code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-deep);
   padding: 0.1em 0.35em;
   border-radius: 3px;
 }
@@ -217,7 +262,7 @@ main > h1 {
 .post-content pre {
   margin: 1rem 0;
   padding: 1rem;
-  background: rgba(0,0,0,0.2);
+  background: var(--bg-deep);
   border-radius: 4px;
   overflow-x: auto;
 }
