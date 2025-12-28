@@ -1,6 +1,7 @@
 ---
 title: "On the Definition of Intelligence"
 date: 2025-12-28
+status: in_progress
 ---
 
 ## Ontology
