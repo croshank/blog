@@ -8,7 +8,7 @@
 :root {
   /* Light mode (default) */
   --bg-deep: #F0F0EB;
-  --bg-surface: #FAFAF7;
+  --bg-surface: #F0F0EB;
   --text-primary: #262625;
   --text-body: #3a3a38;
   --text-secondary: #5c5c58;
@@ -22,8 +22,8 @@
 }
 
 [data-theme="dark"] {
-  --bg-deep: #2f2b26;
-  --bg-surface: #3a3530;
+  --bg-deep: #262625;
+  --bg-surface: #262625;
   --text-primary: #f5f1eb;
   --text-body: #e8e4dd;
   --text-secondary: #c4bfb6;
@@ -79,7 +79,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 2px;
   background: var(--accent);
 }
 
