@@ -286,6 +286,25 @@ main > h1 {
   font-size: 0.9rem;
 }
 
+/* Tables */
+.post-content table {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.post-content th {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* Mathematics - natural flow like typeset text */
 .katex-display {
   margin: 0.9rem 0;

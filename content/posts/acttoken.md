@@ -53,7 +53,7 @@ where $n_j(K)$ is the number of scale-$j$ coefficients among the first $K$ decod
 
 Each basis decodes $K_B = \lfloor W \cdot \alpha_B \cdot R \rfloor$ coefficients per execution horizon, where $\alpha_B$ models the per-basis compression efficiency ($\alpha_{\text{DCT}} = \alpha_{\text{Haar}} = 1$, $\alpha_{\text{Dirac}} = 0.5$, reflecting the Dirac basis's poorer BPE compression).
 
-![Analytical prefix loss for the three bases under a 1/f^β power spectrum](/blog/images/acttoken/analytical_prefix_loss.png)
+<p align="center"><img src="/blog/images/acttoken/analytical_prefix_loss.png" alt="Analytical prefix loss for the three bases under a 1/f^β power spectrum" style="width:60%"></p>
 
 *Prefix loss $\mathcal{L}(W)/\sigma^2$ (%) for the three bases with $H=32$. At moderate decode rates ($R \geq 1.25$), DWT-TP achieves lower prefix loss than both DCT and Dirac across most execution horizons. However, at lower rates or steeper spectra ($\beta = 1.5$), DCT's superior energy concentration in the leading coefficients begins to edge out DWT-TP.*
 
@@ -78,7 +78,7 @@ We evaluate on six datasets spanning 7 to 40 action dimensions and 5 to 50 Hz co
 | UTree Fold | 40 | 50 | 50 | 333 | 472 | 1221 |
 | UTree Warehouse | 40 | 50 | 50 | 366 | 483 | 1094 |
 
-![Prefix reconstruction loss vs. execution horizon for six datasets](/blog/images/acttoken/paper_batch_mse_1x_3x2.png)
+<p align="center"><img src="/blog/images/acttoken/paper_batch_mse_1x_3x2.png" alt="Prefix reconstruction loss vs. execution horizon for six datasets" style="width:60%"></p>
 
 *Prefix reconstruction loss $\mathcal{L}(W, R{=}3)$, normalized by signal energy, vs. execution horizon $W$ for six datasets at native control rate. Lower is better. DWT-TP (red) achieves the lowest prefix loss at early horizons across all six datasets; DCT (blue) narrows the gap or overtakes only as $W$ approaches the full chunk length $H$.*
 
